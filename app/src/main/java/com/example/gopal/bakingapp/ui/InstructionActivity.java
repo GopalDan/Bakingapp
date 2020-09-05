@@ -127,11 +127,17 @@ public class InstructionActivity extends AppCompatActivity {
      * Release ExoPlayer.
      */
     private void releasePlayer() {
-        mExoPlayer.stop();
-        mExoPlayer.release();
-        mExoPlayer = null;
+        if(mExoPlayer!=null) {
+            mExoPlayer.stop();
+            mExoPlayer.release();
+            mExoPlayer = null;
+        }
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        releasePlayer();
+    }
 }
 

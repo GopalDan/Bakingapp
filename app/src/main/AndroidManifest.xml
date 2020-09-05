@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".ui.DetailsActivity"
             android:parentActivityName=".ui.MainActivity"
-            android:label="DetailsActivity"
             android:launchMode="singleTop"/>
         <activity android:name=".ui.InstructionActivity"
             android:parentActivityName=".ui.DetailsActivity"

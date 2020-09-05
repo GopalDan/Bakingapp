@@ -140,7 +140,7 @@ public final class QueryUtils {
     }
 
     /**
-     * Return a list of  {@link Movie}  by parsing out json.
+     * Return a list of  {@link Recipe}  by parsing out json.
      */
     private static Recipe extractFeatureFromJson(String jsonString, int selectedId) {
         // If the JSON string is empty or null, then return early.

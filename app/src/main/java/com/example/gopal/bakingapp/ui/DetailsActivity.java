@@ -70,9 +70,12 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     public void showIngredient(Recipe singleRecipe) {
         //Log.e(TAG, "ID is" + singleRecipe.getId());
         if (singleRecipe != null) {
+            String recipeName = singleRecipe.getName();
             ingredients = singleRecipe.getIngredients();
             steps = singleRecipe.getSteps();
 
+            // setting title in action bar
+            setTitle(recipeName);
             for(int j=0;j<steps.size();j++){
                 List<String> singleInstruction = steps.get(j);
                 String stepNumber = singleInstruction.get(0);
@@ -85,6 +88,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             }
 
             TextView txtView = findViewById(R.id.ingredient_tv);
+            txtView.setText("");
             int length = ingredients.size();
             Log.e(TAG, "Number of ingredients are: " + length);
 
